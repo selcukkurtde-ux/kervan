@@ -545,9 +545,35 @@ function initBuilder() {
   builderReady = true;
 }
 
+/* ---------- account / greeting ---------- */
+function initAccount() {
+  let name = "";
+  try { name = localStorage.getItem("kervan-name") || ""; } catch (e) {}
+
+  const hero = document.getElementById("hero-name");
+  if (hero) hero.textContent = name ? name.toLowerCase() + ", " : "";
+
+  document.querySelectorAll("[data-auth-link]").forEach((a) => {
+    if (name) {
+      a.textContent = "log out";
+      a.setAttribute("href", "#");
+      a.onclick = (e) => {
+        e.preventDefault();
+        try { localStorage.removeItem("kervan-name"); } catch (_) {}
+        window.location.reload();
+      };
+    } else {
+      a.textContent = "log in";
+      a.setAttribute("href", "login.html");
+      a.onclick = null;
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initSeason();
   initReveal();
   initBuilder();
   initKits();
+  initAccount();
 });
