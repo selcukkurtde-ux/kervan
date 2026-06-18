@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kervan — your camp, already packed</title>
+<meta name="description" content="Modular aluminum bike trailers for weekend camping. Pick your modules — oven to Starlink — we bolt them in and deliver hitch-ready on Friday. München.">
+<meta name="theme-color" content="#E8EBED">
+<script>
+  /* season — apply before paint so there's no flash of the wrong mode */
+  (function () {
+    try {
+      var s = localStorage.getItem("kervan-season");
+      document.documentElement.dataset.season = (s === "winter") ? "winter" : "summer";
+    } catch (e) {
+      document.documentElement.dataset.season = "summer";
+    }
+  })();
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 4 L28 11 L6 18 Z' fill='%23FF471D'/%3E%3Crect x='5' y='4' width='2.5' height='26' rx='1' fill='%2316191C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-default-preset="starter">
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-pill">
+    <a class="nav-brand" href="index.html">kervan
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1 L13 5 L2 9 Z" fill="#FF471D"/><rect x="1.2" y="1" width="1.6" height="12" rx="0.8" fill="#16191C"/></svg>
+    </a>
+    <div class="nav-links">
+      <a href="builder.html">build</a>
+      <a href="routes.html">routes</a>
+      <a href="fleet.html">fleet</a>
+      <a href="#how">how it works</a>
+    </div>
+    <div class="season-toggle" role="group" aria-label="Choose season">
+      <button type="button" class="season-btn" data-season-set="summer" aria-pressed="true">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="3.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="9" y1="1.4" x2="9" y2="3.2"/><line x1="9" y1="14.8" x2="9" y2="16.6"/><line x1="1.4" y1="9" x2="3.2" y2="9"/><line x1="14.8" y1="9" x2="16.6" y2="9"/><line x1="3.7" y1="3.7" x2="5" y2="5"/><line x1="13" y1="13" x2="14.3" y2="14.3"/><line x1="14.3" y1="3.7" x2="13" y2="5"/><line x1="5" y1="13" x2="3.7" y2="14.3"/></g></svg>
+        <span>summer</span>
+      </button>
+      <button type="button" class="season-btn" data-season-set="winter" aria-pressed="false">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="9" y1="2" x2="9" y2="16"/><line x1="2.9" y1="5.5" x2="15.1" y2="12.5"/><line x1="2.9" y1="12.5" x2="15.1" y2="5.5"/><line x1="9" y1="4.6" x2="7.5" y2="3.3"/><line x1="9" y1="4.6" x2="10.5" y2="3.3"/><line x1="9" y1="13.4" x2="7.5" y2="14.7"/><line x1="9" y1="13.4" x2="10.5" y2="14.7"/></g></svg>
+        <span>winter</span>
+      </button>
+    </div>
+    <a class="btn btn--flag btn--small nav-cta" href="#build" data-label-summer="Start building" data-label-winter="Build for snow">Start building</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rise">münchen · modular bike-trailer rental · fri → sun</p>
+      <h1 class="hero-title">
+        <span class="l1 rise">pack nothing,</span>
+        <span class="l2 rise rise-2" data-label-summer="camp everywhere." data-label-winter="ski everywhere.">camp everywhere.</span>
+      </h1>
+      <p class="hero-sub rise rise-2" data-label-summer="Choose your modules — oven to Starlink — and we bolt them into a riveted aluminum trailer. It arrives hitch-ready on Friday morning. Ride out, camp, hand it back Sunday evening." data-label-winter="Choose your modules — ski rack to power station — and we bolt them into a riveted aluminum trailer. It arrives hitch-ready on Friday morning. Ride out, ski, hand it back Sunday evening.">Choose your modules — oven to Starlink — and we bolt them into a riveted aluminum trailer. It arrives hitch-ready on Friday morning. Ride out, camp, hand it back Sunday evening.</p>
+      <div class="hero-actions rise rise-3">
+        <a class="btn btn--flag" href="#build" data-label-summer="Start building" data-label-winter="Build for snow">Start building</a>
+        <a class="btn btn--ghost" href="routes.html">See the routes</a>
+      </div>
+      <p class="hero-note rise rise-3">from €19 a weekend · delivery inside münchen included · the hitch fits any bike</p>
+    </div>
+
+    <div class="hero-stage" aria-hidden="true">
+      <svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="aluHero" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F5F7F8"/>
+            <stop offset="1" stop-color="#D7DCDF"/>
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="403" x2="760" y2="403" stroke="rgba(22,25,28,.14)" stroke-width="2"/>
+        <g class="roll-in">
+          <ellipse cx="380" cy="403" rx="280" ry="11" fill="rgba(22,25,28,.09)"/>
+          <path d="M150 250 C 106 250 82 272 58 306" stroke="#9AA2A8" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <circle cx="54" cy="311" r="11" fill="#C4CBCF" stroke="#9AA2A8" stroke-width="3"/>
+          <rect x="150" y="118" width="430" height="170" rx="26" fill="url(#aluHero)" stroke="#B6BDC2" stroke-width="1.5"/>
+          <path d="M168 156 H 562" stroke="#C6CCD0" stroke-width="1.5"/>
+          <rect x="354" y="150" width="20" height="11" rx="3" fill="#AEB6BB"/>
+          <path d="M295 162 V274 M435 162 V274" stroke="#CDD3D6" stroke-width="1"/>
+          <line x1="168" y1="131" x2="562" y2="131" stroke="#A7AFB5" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 26"/>
+          <line x1="168" y1="275" x2="562" y2="275" stroke="#A7AFB5" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 26"/>
+          <text x="556" y="252" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="2.5" fill="#8F979D">KERVAN · K2</text>
+          <line x1="176" y1="118" x2="176" y2="40" stroke="#4A4F53" stroke-width="3" stroke-linecap="round"/>
+          <path class="flutter" d="M176 42 L 236 56 L 176 70 Z" fill="#FF471D"/>
+          <g class="hero-skis">
+            <rect x="338" y="104" width="54" height="14" rx="4" fill="#F8FAFB" stroke="#AEB6BB"/>
+            <path d="M356 104 L356 34 Q356 18 370 23" fill="none" stroke="#1F2326" stroke-width="8" stroke-linecap="round"/>
+            <path d="M374 104 L374 34 Q374 18 388 23" fill="none" stroke="#6B7176" stroke-width="8" stroke-linecap="round"/>
+            <rect x="346" y="58" width="40" height="9" rx="4.5" fill="#FF471D"/>
+          </g>
+          <circle cx="410" cy="330" r="66" fill="none" stroke="#1F2326" stroke-width="17"/>
+          <circle cx="410" cy="330" r="51" fill="#E2E7EA" stroke="#AEB6BB" stroke-width="2"/>
+          <g class="spin">
+            <line x1="362" y1="330" x2="458" y2="330" stroke="#9AA2A8" stroke-width="3"/>
+            <line x1="410" y1="282" x2="410" y2="378" stroke="#9AA2A8" stroke-width="3"/>
+            <line x1="376" y1="296" x2="444" y2="364" stroke="#9AA2A8" stroke-width="3"/>
+            <line x1="376" y1="364" x2="444" y2="296" stroke="#9AA2A8" stroke-width="3"/>
+          </g>
+          <circle cx="410" cy="330" r="9" fill="#6B7176"/>
+          <path d="M 332 324 A 79 79 0 0 1 488 324" stroke="#B6BDC2" stroke-width="8" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ builder ============ -->
+<section class="section" id="build">
+  <div class="wrap">
+    <div class="section-head reveal season-summer">
+      <p class="eyebrow">build it — 14 modules · 3 shells · live payload</p>
+      <h2 class="h2">build your trailer</h2>
+      <p class="lead">Every module clicks into the same rail system. Tick what your weekend needs; the gauge keeps you honest on weight. We assemble and test the lot on Thursday.</p>
+    </div>
+    <div class="section-head reveal season-winter">
+      <p class="eyebrow">build it — winter rig · ski rack · live payload</p>
+      <h2 class="h2">build your winter rig</h2>
+      <p class="lead">Same rail system, snow setup. Bolt on the upright ski &amp; board rack, then add the tent, sleeping bags and power station — whatever a ski-resort run or a friendsmas in the mountains calls for. We assemble and test it Thursday.</p>
+    </div>
+
+    <div class="seg reveal" role="radiogroup" aria-label="Choose a shell">
+      <label><input type="radio" name="model" value="k1"> K1 solo <span class="seg-price">€19</span></label>
+      <label><input type="radio" name="model" value="k2" checked> K2 duo <span class="seg-price">€29</span></label>
+      <label><input type="radio" name="model" value="k3"> K3 basecamp <span class="seg-price">€39</span></label>
+    </div>
+
+    <div class="builder-grid">
+      <div class="rig reveal">
+        <div id="rig-svg"></div>
+        <p class="rig-empty" id="rig-empty">Nothing on board yet. Add a module to start your build.</p>
+        <div class="gauge">
+          <div class="gauge-track"><div class="gauge-fill" id="gauge-fill"></div></div>
+          <div class="gauge-labels">
+            <span id="gauge-kg">15.2 / 60 kg</span>
+            <span id="gauge-slots">5 / 8 slots</span>
+          </div>
+          <p class="gauge-warn" id="gauge-warn"></p>
+        </div>
+      </div>
+
+      <div class="reveal" id="module-list"></div>
+    </div>
+
+    <div class="build-bar">
+      <div class="build-stats">
+        <div><span>weekend total</span><b id="bar-eur">€61</b></div>
+        <div><span>loaded weight</span><b id="bar-kg">15.2 kg</b></div>
+        <div><span>modules</span><b id="bar-mods">0 of 14</b></div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <a class="head-link" id="bar-continue" href="builder.html" style="color:rgba(248,250,251,.65)">open the full builder →</a>
+        <button class="btn btn--flag" id="bar-reserve">Reserve this build</button>
+      </div>
+    </div>
+
+    <div class="season-winter">
+
+      <div class="section-head reveal kits-head">
+        <p class="eyebrow">premade kits · ready to ride</p>
+        <h2 class="h2">winter kits, already boxed</h2>
+        <p class="lead">Don't feel like building from scratch? Rent a ready-boxed winter bundle and we'll bolt it straight into your trailer.</p>
+      </div>
+
+      <div class="kits-grid">
+        <a class="kit-card reveal" href="#build" data-kit="Friendsmas Kit">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16v9H4z"/><path d="M3 7h18v4H3z"/><path d="M12 7v13"/><path d="M12 7S10.5 3 8 4.2C6 5.2 8 7 8 7M12 7s1.5-4 4-2.8C18 5.2 16 7 16 7"/></svg></span>
+          <h3 class="kit-name">Friendsmas Kit</h3>
+          <p class="kit-blurb">Board games, two card decks, a stack of paperbacks and string lights — everything a cabin full of friends needs for the long mountain evenings.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · for groups</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Warm Welcome Box">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8.5 5.5c0-1 1-1 1-2M12 5.5c0-1 1-1 1-2"/></svg></span>
+          <h3 class="kit-name">Warm Welcome Box</h3>
+          <p class="kit-blurb">Wool blankets, a steel thermos and a fistful of hand-warmers — enough to thaw a cold week.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · 6 items</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Pantry Share Crate">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span>
+          <h3 class="kit-name">Pantry Share Crate</h3>
+          <p class="kit-blurb">Lentils, oats, tinned warmth and a jar of honey — winter staples so the hut kitchen cooks itself.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · pantry</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Little Ones Kit">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3"/><circle cx="12" cy="16.5" r="4.5"/><path d="M10.7 7.4h.02M13.3 7.4h.02"/><path d="M9 12.5l-2-1M15 12.5l2-1"/></svg></span>
+          <h3 class="kit-name">Little Ones Kit</h3>
+          <p class="kit-blurb">Snowsuits, boots and mittens, cleaned and sorted by size — so the small adventurers stay warm on the slopes.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · by size</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Hot Drinks Kit">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1.2 11a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8z"/><path d="M5 8h14"/><path d="M9.5 4.5c0-1 1-1 1-2M13.5 4.5c0-1 1-1 1-2"/></svg></span>
+          <h3 class="kit-name">Hot Drinks Kit</h3>
+          <p class="kit-blurb">A vacuum flask, good cocoa and a bundle of mulled-wine spices to keep the kitchen smelling like December.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · 5 items</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Festive Lights Set">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5c4 3 14 3 18 0"/><path d="M7 6.2v1.4a1.8 1.8 0 0 0 3.6 0V6.2"/><path d="M14 6.2v1.4a1.8 1.8 0 0 0 3.6 0V6.2"/><path d="M8.8 11v8M15.8 11v8"/></svg></span>
+          <h3 class="kit-name">Festive Lights Set</h3>
+          <p class="kit-blurb">Tested string lights and a few decorations, boxed to brighten someone's window through the dark months.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · lights</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+        <a class="kit-card reveal" href="#build" data-kit="Repair &amp; Tinker Kit">
+          <span class="kit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></span>
+          <h3 class="kit-name">Repair &amp; Tinker Kit</h3>
+          <p class="kit-blurb">A trail toolbox — drivers, tape, glue and spares — for fixing whatever the cold shakes loose.</p>
+          <span class="kit-foot"><span class="kit-meta">winter bundle · loanable</span><span class="kit-go">Rent this kit →</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ routes ============ -->
+<section class="section section--pine" id="routes">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow">popular routes · bavaria · fri → sun</p>
+        <h2 class="h2">where it rolls</h2>
+        <p class="lead">Tested with a loaded trailer, graded honestly. Each route comes with a build we'd take ourselves — load it and tweak.</p>
+      </div>
+      <a class="head-link" href="routes.html">all six routes →</a>
+    </div>
+
+    <div class="routes-grid">
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 88 C 58 36 96 92 140 60 S 218 18 258 30" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="88" r="4" fill="#E8EBED"/>
+          <path d="M258 30 L 272 34 L 258 39 Z" fill="#FF471D"/>
+          <text x="190" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">54 km · riverside gravel</text>
+        </svg>
+        <h3 class="route-name">isar trail</h3>
+        <p class="route-stats"><span>münchen → bad tölz</span><span>1–2 days</span><span>flat</span></p>
+        <p class="route-blurb">Follow the river out of the city on shaded gravel. Pitch where the rapids quiet down, screen a film under the stars.</p>
+        <a class="route-link" href="builder.html?preset=film-night">load the film-night build →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 60 C 50 90 90 26 134 54 S 210 92 262 44" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="60" r="4" fill="#E8EBED"/>
+          <path d="M262 44 L 276 48 L 262 53 Z" fill="#FF471D"/>
+          <text x="178" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">47 km · one honest climb</text>
+        </svg>
+        <h3 class="route-name">tegernsee – schliersee</h3>
+        <p class="route-stats"><span>two lakes, one pass</span><span>1–2 days</span><span>rolling</span></p>
+        <p class="route-blurb">Two lakes and a climb that earns the view. Books for the dock, coffee for the summit.</p>
+        <a class="route-link" href="builder.html?preset=books">load the dock-library build →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 76 C 70 60 110 80 156 50 S 226 36 264 56" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="76" r="4" fill="#E8EBED"/>
+          <path d="M264 56 L 278 60 L 264 65 Z" fill="#FF471D"/>
+          <text x="186" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">32 km · overnighter</text>
+        </svg>
+        <h3 class="route-name">amper dawn ride</h3>
+        <p class="route-stats"><span>the after-work escape</span><span>1 night</span><span>flat</span></p>
+        <p class="route-blurb">Leave at six, fire by nine, back at your desk by nine. The shortest possible distance to feeling far away.</p>
+        <a class="route-link" href="builder.html?preset=starter">load the starter build →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ fleet ============ -->
+<section class="section" id="fleet">
+  <div class="wrap">
+    <div class="section-head section-head--row reveal">
+      <div>
+        <p class="eyebrow">the fleet · riveted 5052 aluminum</p>
+        <h2 class="h2">three shells, one rail system</h2>
+        <p class="lead">Same rails, same hitch, same rivets — pick by how much weekend you're towing.</p>
+      </div>
+      <a class="head-link" href="fleet.html">full spec sheets →</a>
+    </div>
+
+    <div class="fleet-grid">
+      <article class="shell-card reveal">
+        <p class="shell-code">SHELL 01</p>
+        <h3 class="shell-name">K1 solo</h3>
+        <p class="shell-line">One rider, one night, the essentials.</p>
+        <svg viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M42 78 C 30 78 24 84 16 94" stroke="#9AA2A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="42" y="44" width="140" height="44" rx="12" fill="#E3E8EA" stroke="#B6BDC2"/>
+          <circle cx="118" cy="96" r="18" fill="none" stroke="#1F2326" stroke-width="6"/>
+          <line x1="50" y1="52" x2="174" y2="52" stroke="#A7AFB5" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 14"/>
+        </svg>
+        <div class="spec-row"><span>volume</span><span>120 L</span></div>
+        <div class="spec-row"><span>payload</span><span>40 kg</span></div>
+        <div class="spec-row"><span>slots</span><span>6 + roof</span></div>
+        <div class="spec-row"><span>wheels</span><span>16″</span></div>
+        <div class="shell-foot">
+          <p class="shell-price">€19 <span>/ weekend</span></p>
+          <a class="btn btn--ghost btn--small" href="builder.html?model=k1">Build on K1</a>
+        </div>
+      </article>
+
+      <article class="shell-card reveal">
+        <p class="shell-code">SHELL 02</p>
+        <h3 class="shell-name">K2 duo</h3>
+        <p class="shell-line">The weekender. Two people, two nights.</p>
+        <svg viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M36 80 C 24 80 18 86 12 94" stroke="#9AA2A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="36" y="34" width="152" height="54" rx="13" fill="#E3E8EA" stroke="#B6BDC2"/>
+          <circle cx="118" cy="98" r="20" fill="none" stroke="#1F2326" stroke-width="6"/>
+          <line x1="44" y1="42" x2="180" y2="42" stroke="#A7AFB5" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 14"/>
+        </svg>
+        <div class="spec-row"><span>volume</span><span>210 L</span></div>
+        <div class="spec-row"><span>payload</span><span>60 kg</span></div>
+        <div class="spec-row"><span>slots</span><span>8 + roof</span></div>
+        <div class="spec-row"><span>wheels</span><span>20″</span></div>
+        <div class="shell-foot">
+          <p class="shell-price">€29 <span>/ weekend</span></p>
+          <a class="btn btn--ghost btn--small" href="builder.html?model=k2">Build on K2</a>
+        </div>
+      </article>
+
+      <article class="shell-card reveal">
+        <p class="shell-code">SHELL 03</p>
+        <h3 class="shell-name">K3 basecamp</h3>
+        <p class="shell-line">Two riders, three days, no compromises.</p>
+        <svg viewBox="0 0 220 120" aria-hidden="true">
+          <path d="M30 82 C 20 82 14 88 10 94" stroke="#9AA2A8" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <rect x="30" y="24" width="164" height="64" rx="14" fill="#E3E8EA" stroke="#B6BDC2"/>
+          <circle cx="116" cy="100" r="20" fill="none" stroke="#1F2326" stroke-width="6"/>
+          <line x1="38" y1="32" x2="186" y2="32" stroke="#A7AFB5" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.1 14"/>
+        </svg>
+        <div class="spec-row"><span>volume</span><span>320 L</span></div>
+        <div class="spec-row"><span>payload</span><span>80 kg</span></div>
+        <div class="spec-row"><span>slots</span><span>12 + roof</span></div>
+        <div class="spec-row"><span>wheels</span><span>20″ reinforced</span></div>
+        <div class="shell-foot">
+          <p class="shell-price">€39 <span>/ weekend</span></p>
+          <a class="btn btn--ghost btn--small" href="builder.html?model=k3">Build on K3</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ how it works ============ -->
+<section class="section section--sheet" id="how">
+  <div class="wrap">
+    <div class="season-summer">
+    <div class="section-head reveal">
+      <p class="eyebrow">how a weekend works · four steps, three days</p>
+      <h2 class="h2">from click to campfire</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <p class="step-when">01 — <b>anytime</b></p>
+        <h3>build it here</h3>
+        <p>Pick a shell and your modules. Five minutes, mostly fun. The gauge keeps the weight honest.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">02 — <b>thursday</b></p>
+        <h3>we bolt it in</h3>
+        <p>Every module clicks into the rails, gets charged, gets checked. Your manifest rides in the lid pocket.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">03 — <b>friday 08:00</b></p>
+        <h3>it meets your bike</h3>
+        <p>Delivered to your door and clipped to your rear axle in two minutes. Quick-release or thru-axle, e-bikes welcome.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">04 — <b>sunday 18:00</b></p>
+        <h3>hand it back</h3>
+        <p>We collect from the same door. You unpack nothing — that was the whole idea.</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="season-winter">
+    <div class="section-head reveal">
+      <p class="eyebrow">winter, answered · what we offer</p>
+      <h2 class="h2">how winter works</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <p class="step-when">snow &amp; ice</p>
+        <h3>Does it handle the cold?</h3>
+        <p>Studded tires come as standard and the hitch is rated for icy tracks — it tows sure-footed all the way to the lift.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">the skis</p>
+        <h3>Where do skis and boards go?</h3>
+        <p>Upright in a locking metal roof rack, clear of your wheels. Two pairs of skis or a snowboard fit easily.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">with friends</p>
+        <h3>What's the friendsmas kit?</h3>
+        <p>A boxed mountain-weekend bundle — board games, cards, books and string lights for a cabin full of friends.</p>
+      </div>
+      <div class="step reveal">
+        <p class="step-when">same rhythm</p>
+        <h3>Still Friday to Sunday?</h3>
+        <p>Exactly as summer: hitch-ready Friday morning, collected Sunday evening, delivery inside München included.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ faq ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">questions, answered</p>
+      <h2 class="h2">before you hitch</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Will the hitch fit my bike?</summary>
+        <p>Yes. The coupling mounts on the rear axle, and quick-release plus 12 mm thru-axle adapters ship attached. E-bikes pull it happily — the K3 actually prefers one.</p>
+      </details>
+      <details>
+        <summary>What happens if it rains?</summary>
+        <p>The shell is sealed to IP54 with a gasketed lid. Your sleeping bags, books and projector stay dry; the aluminum just looks better wet.</p>
+      </details>
+      <details>
+        <summary>Deposit and damage — how does it work?</summary>
+        <p>We hold €150 and release it Monday after inspection. Normal wear is ours — scratches are part of an aluminum life. We only charge for lost or broken modules, at the prices on the build page.</p>
+      </details>
+      <details>
+        <summary>Where do you deliver?</summary>
+        <p>Inside Munich, delivery and collection are included. Within 25 km of the ring it's €9 each way. Friday delivery lands 08:00–10:00; Sunday pickup runs 18:00–21:00.</p>
+      </details>
+      <details>
+        <summary>Can I keep it past Sunday?</summary>
+        <p>Extend any build for €19 a day — tap the link in your confirmation email before Sunday noon and we'll move the pickup.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-mark">kervan</p>
+    <div class="footer-cols">
+      <div>
+        <h4>what this is</h4>
+        <p data-label-summer="Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday." data-label-winter="Modular aluminum trailers for ski trips and mountain weekends. Built, bolted and delivered in München, collected on Sunday.">Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday.</p>
+      </div>
+      <div>
+        <h4>explore</h4>
+        <ul>
+          <li><a href="builder.html">build a trailer</a></li>
+          <li><a href="routes.html">routes</a></li>
+          <li><a href="fleet.html">the fleet</a></li>
+          <li><a href="index.html#how">how it works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>talk to us</h4>
+        <ul>
+          <li><a href="mailto:hello@kervan.cc">hello@kervan.cc</a></li>
+          <li><a href="tel:+498900000000">+49 89 000 00 00</a></li>
+          <li><a href="#">@kervan.cc</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>small print</h4>
+        <ul>
+          <li><a href="index.html#how">deposit &amp; damage</a></li>
+          <li><a href="#">terms</a></li>
+          <li><a href="#">privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 kervan gmbh · built &amp; bolted in münchen</span>
+      <span>5052 aluminum · stainless rivets · zero plastic shells</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ reserve dialog ============ -->
+<dialog class="reserve" id="reserve-dialog">
+  <div class="reserve-inner">
+    <form id="reserve-form" novalidate>
+      <h3>Reserve this build</h3>
+      <p class="reserve-sub">We bolt it Thursday, deliver Friday 08:00–10:00, collect Sunday evening.</p>
+      <div class="manifest" id="reserve-manifest"></div>
+      <div class="field">
+        <span class="field-label">Weekend</span>
+        <div class="weekend-list" id="weekend-list"></div>
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-name">Name</label>
+        <input type="text" id="f-name" autocomplete="name" placeholder="On the delivery label">
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-email">Email</label>
+        <input type="email" id="f-email" autocomplete="email" placeholder="Where the manifest goes">
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-bike">Bike model</label>
+        <input type="text" id="f-bike" autocomplete="off" placeholder="e.g. Cube Reaction, Tern GSD, Dutch city bike">
+      </div>
+      <p class="form-error" id="form-error"></p>
+      <div class="reserve-actions">
+        <button type="button" class="btn btn--ghost" id="reserve-cancel">Keep building</button>
+        <button type="submit" class="btn btn--flag">Reserve this build</button>
+      </div>
+    </form>
+    <div id="reserve-confirm" style="display:none">
+      <h3>Build reserved.</h3>
+      <p class="confirm-ref" id="confirm-ref">KV-0000</p>
+      <div class="confirm-lines">
+        <p>Bolting starts Thursday. Your trailer meets your bike Friday between 08:00 and 10:00.</p>
+        <p>We'll fit the right coupling for your <b id="confirm-bike"></b> — no adapters to puzzle over.</p>
+        <p>The manifest is on its way to <b id="confirm-email"></b>.</p>
+      </div>
+      <div class="reserve-actions">
+        <button type="button" class="btn btn--ink" id="reserve-done">Done</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>

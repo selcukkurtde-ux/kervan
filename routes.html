@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>routes — kervan</title>
+<meta name="description" content="Six Bavarian weekend routes tested with a loaded trailer — Isar, Tegernsee, Chiemsee, Altmühltal and more. Each with a suggested build.">
+<meta name="theme-color" content="#16291F">
+<script>
+  /* season — apply before paint so there's no flash of the wrong mode */
+  (function () {
+    try {
+      var s = localStorage.getItem("kervan-season");
+      document.documentElement.dataset.season = (s === "winter") ? "winter" : "summer";
+    } catch (e) {
+      document.documentElement.dataset.season = "summer";
+    }
+  })();
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 4 L28 11 L6 18 Z' fill='%23FF471D'/%3E%3Crect x='5' y='4' width='2.5' height='26' rx='1' fill='%2316191C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { background: var(--pine); }
+  .page-hero--pine { color: var(--mist-90); }
+  .page-hero--pine .eyebrow { color: var(--mist-45); }
+  .page-hero--pine .hero-title .l1 { color: rgba(237, 242, 238, .32); }
+  .page-hero--pine .hero-title .l2 { color: #F2F6F3; }
+  .page-hero--pine .hero-sub { color: var(--mist-65); }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-pill">
+    <a class="nav-brand" href="index.html">kervan
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1 L13 5 L2 9 Z" fill="#FF471D"/><rect x="1.2" y="1" width="1.6" height="12" rx="0.8" fill="#16191C"/></svg>
+    </a>
+    <div class="nav-links">
+      <a href="builder.html">build</a>
+      <a href="routes.html" class="is-active">routes</a>
+      <a href="fleet.html">fleet</a>
+      <a href="index.html#how">how it works</a>
+    </div>
+    <div class="season-toggle" role="group" aria-label="Choose season">
+      <button type="button" class="season-btn" data-season-set="summer" aria-pressed="true">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="3.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="9" y1="1.4" x2="9" y2="3.2"/><line x1="9" y1="14.8" x2="9" y2="16.6"/><line x1="1.4" y1="9" x2="3.2" y2="9"/><line x1="14.8" y1="9" x2="16.6" y2="9"/><line x1="3.7" y1="3.7" x2="5" y2="5"/><line x1="13" y1="13" x2="14.3" y2="14.3"/><line x1="14.3" y1="3.7" x2="13" y2="5"/><line x1="5" y1="13" x2="3.7" y2="14.3"/></g></svg>
+        <span>summer</span>
+      </button>
+      <button type="button" class="season-btn" data-season-set="winter" aria-pressed="false">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="9" y1="2" x2="9" y2="16"/><line x1="2.9" y1="5.5" x2="15.1" y2="12.5"/><line x1="2.9" y1="12.5" x2="15.1" y2="5.5"/><line x1="9" y1="4.6" x2="7.5" y2="3.3"/><line x1="9" y1="4.6" x2="10.5" y2="3.3"/><line x1="9" y1="13.4" x2="7.5" y2="14.7"/><line x1="9" y1="13.4" x2="10.5" y2="14.7"/></g></svg>
+        <span>winter</span>
+      </button>
+    </div>
+    <a class="btn btn--flag btn--small nav-cta" href="builder.html">Start building</a>
+  </div>
+</nav>
+
+<header class="page-hero page-hero--pine">
+  <div class="wrap">
+    <p class="eyebrow rise">six routes · graded with a loaded trailer · fri → sun</p>
+    <h1 class="hero-title">
+      <span class="l1 rise">out by friday,</span>
+      <span class="l2 rise rise-2">far by dinner.</span>
+    </h1>
+    <p class="hero-sub rise rise-2">Every route below has pulled a full K-shell at least a dozen times. Distances are real, climbs are admitted to, and each one ships with the build we'd take ourselves.</p>
+  </div>
+</header>
+
+<main>
+<section class="section section--pine" style="padding-top: 24px;">
+  <div class="wrap">
+    <div class="routes-grid">
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 88 C 58 36 96 92 140 60 S 218 18 258 30" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="88" r="4" fill="#E8EBED"/>
+          <path d="M258 30 L 272 34 L 258 39 Z" fill="#FF471D"/>
+          <text x="190" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">54 km · gravel</text>
+        </svg>
+        <h3 class="route-name">isar trail</h3>
+        <p class="route-stats"><span>münchen → bad tölz</span><span>1–2 days</span><span>flat</span></p>
+        <p class="route-blurb">Follow the river out of the city on shaded gravel — swim spots from km 30, fire pits past Wolfratshausen. Pitch where the rapids quiet down and screen a film under the stars.</p>
+        <a class="route-link" href="builder.html?preset=film-night">load the film-night build · K3 →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 60 C 50 90 90 26 134 54 S 210 92 262 44" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="60" r="4" fill="#E8EBED"/>
+          <path d="M262 44 L 276 48 L 262 53 Z" fill="#FF471D"/>
+          <text x="178" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">47 km · one climb</text>
+        </svg>
+        <h3 class="route-name">tegernsee – schliersee</h3>
+        <p class="route-stats"><span>two lakes, one pass</span><span>1–2 days</span><span>rolling</span></p>
+        <p class="route-blurb">Two lakes and a climb that earns the view. Books for the dock, coffee for the summit, and a bakery in Gmund that opens before you're hungry.</p>
+        <a class="route-link" href="builder.html?preset=books">load the dock-library build · K2 →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 76 C 70 60 110 80 156 50 S 226 36 264 56" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="76" r="4" fill="#E8EBED"/>
+          <path d="M264 56 L 278 60 L 264 65 Z" fill="#FF471D"/>
+          <text x="186" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">32 km · overnighter</text>
+        </svg>
+        <h3 class="route-name">amper dawn ride</h3>
+        <p class="route-stats"><span>the after-work escape</span><span>1 night</span><span>flat</span></p>
+        <p class="route-blurb">Leave at six, fire by nine, back at your desk by nine. The shortest possible distance to feeling far away.</p>
+        <a class="route-link" href="builder.html?preset=starter">load the starter build · K2 →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 54 C 56 84 102 38 148 66 S 222 80 264 36" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="54" r="4" fill="#E8EBED"/>
+          <path d="M264 36 L 278 40 L 264 45 Z" fill="#FF471D"/>
+          <text x="170" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">68 km · market stops</text>
+        </svg>
+        <h3 class="route-name">fünf-seen loop</h3>
+        <p class="route-stats"><span>starnberg → ammersee</span><span>2 days</span><span>rolling</span></p>
+        <p class="route-blurb">Five lakes, four bakeries, two days. Shop the Saturday market in Herrsching and cook it on the shore — this is the route the oven was built for.</p>
+        <a class="route-link" href="builder.html?preset=chef">load the chef build · K3 →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 70 C 62 44 96 88 142 62 S 216 30 264 50" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="70" r="4" fill="#E8EBED"/>
+          <path d="M264 50 L 278 54 L 264 59 Z" fill="#FF471D"/>
+          <text x="176" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">59 km · lakeside</text>
+        </svg>
+        <h3 class="route-name">chiemsee circuit</h3>
+        <p class="route-stats"><span>prien, full loop</span><span>2 days</span><span>flat</span></p>
+        <p class="route-blurb">A flat lakeside spin with the Alps watching the whole way round. Pack light, swim often, let the ferry carry you to the islands.</p>
+        <a class="route-link" href="builder.html?preset=light">load the light &amp; fast build · K1 →</a>
+      </article>
+
+      <article class="route-card reveal">
+        <svg viewBox="0 0 280 110" aria-hidden="true">
+          <path d="M14 82 C 54 64 92 30 138 48 S 220 74 266 40" stroke="#F3C77E" stroke-width="2.5" fill="none"/>
+          <circle cx="14" cy="82" r="4" fill="#E8EBED"/>
+          <path d="M266 40 L 280 44 L 266 49 Z" fill="#FF471D"/>
+          <text x="166" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(237,242,238,.45)">75 km · 2–3 days</text>
+        </svg>
+        <h3 class="route-name">altmühltal</h3>
+        <p class="route-stats"><span>eichstätt → kelheim</span><span>2–3 days</span><span>gentle</span></p>
+        <p class="route-blurb">Limestone cliffs, slow water, the quietest valley in Bavaria. Long enough to want Starlink for the Monday-morning excuse you won't send.</p>
+        <a class="route-link" href="builder.html?preset=long">load the long-weekend build · K3 →</a>
+      </article>
+
+    </div>
+
+    <div class="build-bar reveal" style="margin-top: 40px;">
+      <div>
+        <p style="font-family: var(--font-display); font-weight: 700; font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em;">Riding somewhere else?</p>
+        <p style="margin: 0; font-size: 14.5px; color: rgba(248,250,251,.6);">Every build works on every route. Start from an empty shell and pack for yours.</p>
+      </div>
+      <a class="btn btn--flag" href="builder.html">Build from scratch</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" style="border-top: 1px solid var(--mist-14);">
+  <div class="wrap">
+    <p class="footer-mark">kervan</p>
+    <div class="footer-cols">
+      <div>
+        <h4>what this is</h4>
+        <p data-label-summer="Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday." data-label-winter="Modular aluminum trailers for ski trips and mountain weekends. Built, bolted and delivered in München, collected on Sunday.">Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday.</p>
+      </div>
+      <div>
+        <h4>explore</h4>
+        <ul>
+          <li><a href="builder.html">build a trailer</a></li>
+          <li><a href="routes.html">routes</a></li>
+          <li><a href="fleet.html">the fleet</a></li>
+          <li><a href="index.html#how">how it works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>talk to us</h4>
+        <ul>
+          <li><a href="mailto:hello@kervan.cc">hello@kervan.cc</a></li>
+          <li><a href="tel:+498900000000">+49 89 000 00 00</a></li>
+          <li><a href="#">@kervan.cc</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>small print</h4>
+        <ul>
+          <li><a href="index.html#how">deposit &amp; damage</a></li>
+          <li><a href="#">terms</a></li>
+          <li><a href="#">privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 kervan gmbh · built &amp; bolted in münchen</span>
+      <span>5052 aluminum · stainless rivets · zero plastic shells</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

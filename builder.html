@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>build your trailer — kervan</title>
+<meta name="description" content="Pick a shell, click in your modules — oven, projector, Starlink, books — and watch the payload gauge. We bolt it Thursday, deliver Friday.">
+<meta name="theme-color" content="#E8EBED">
+<script>
+  /* season — apply before paint so there's no flash of the wrong mode */
+  (function () {
+    try {
+      var s = localStorage.getItem("kervan-season");
+      document.documentElement.dataset.season = (s === "winter") ? "winter" : "summer";
+    } catch (e) {
+      document.documentElement.dataset.season = "summer";
+    }
+  })();
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 4 L28 11 L6 18 Z' fill='%23FF471D'/%3E%3Crect x='5' y='4' width='2.5' height='26' rx='1' fill='%2316191C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-pill">
+    <a class="nav-brand" href="index.html">kervan
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 1 L13 5 L2 9 Z" fill="#FF471D"/><rect x="1.2" y="1" width="1.6" height="12" rx="0.8" fill="#16191C"/></svg>
+    </a>
+    <div class="nav-links">
+      <a href="builder.html" class="is-active">build</a>
+      <a href="routes.html">routes</a>
+      <a href="fleet.html">fleet</a>
+      <a href="index.html#how">how it works</a>
+    </div>
+    <div class="season-toggle" role="group" aria-label="Choose season">
+      <button type="button" class="season-btn" data-season-set="summer" aria-pressed="true">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="3.5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="9" y1="1.4" x2="9" y2="3.2"/><line x1="9" y1="14.8" x2="9" y2="16.6"/><line x1="1.4" y1="9" x2="3.2" y2="9"/><line x1="14.8" y1="9" x2="16.6" y2="9"/><line x1="3.7" y1="3.7" x2="5" y2="5"/><line x1="13" y1="13" x2="14.3" y2="14.3"/><line x1="14.3" y1="3.7" x2="13" y2="5"/><line x1="5" y1="13" x2="3.7" y2="14.3"/></g></svg>
+        <span>summer</span>
+      </button>
+      <button type="button" class="season-btn" data-season-set="winter" aria-pressed="false">
+        <svg viewBox="0 0 18 18" aria-hidden="true"><g stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><line x1="9" y1="2" x2="9" y2="16"/><line x1="2.9" y1="5.5" x2="15.1" y2="12.5"/><line x1="2.9" y1="12.5" x2="15.1" y2="5.5"/><line x1="9" y1="4.6" x2="7.5" y2="3.3"/><line x1="9" y1="4.6" x2="10.5" y2="3.3"/><line x1="9" y1="13.4" x2="7.5" y2="14.7"/><line x1="9" y1="13.4" x2="10.5" y2="14.7"/></g></svg>
+        <span>winter</span>
+      </button>
+    </div>
+    <a class="btn btn--flag btn--small nav-cta" href="#build">Start building</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow rise">the builder · 14 modules · live payload · €-per-weekend</p>
+    <h1 class="hero-title">
+      <span class="l1 rise">your weekend,</span>
+      <span class="l2 rise rise-2">slot by slot.</span>
+    </h1>
+    <p class="hero-sub rise rise-2">Start from a preset or an empty shell. Everything you tick is bolted in, charged and tested before it reaches your door.</p>
+  </div>
+</header>
+
+<main>
+<section class="section" id="build" style="padding-top: 0;">
+  <div class="wrap">
+    <div class="presets reveal" aria-label="Preset builds">
+      <button class="preset" data-preset="starter">starter — first trailer</button>
+      <button class="preset" data-preset="film-night">film night — projector &amp; power</button>
+      <button class="preset" data-preset="chef">chef weekend — oven &amp; cooler</button>
+      <button class="preset" data-preset="light">light &amp; fast — K1 minimum</button>
+      <button class="preset" data-preset="books">dock library — books &amp; coffee</button>
+      <button class="preset" data-preset="long">long weekend — starlink &amp; power</button>
+    </div>
+
+    <div class="seg reveal" role="radiogroup" aria-label="Choose a shell">
+      <label><input type="radio" name="model" value="k1"> K1 solo <span class="seg-price">€19</span></label>
+      <label><input type="radio" name="model" value="k2" checked> K2 duo <span class="seg-price">€29</span></label>
+      <label><input type="radio" name="model" value="k3"> K3 basecamp <span class="seg-price">€39</span></label>
+    </div>
+
+    <div class="builder-grid">
+      <div class="rig reveal">
+        <div id="rig-svg"></div>
+        <p class="rig-empty" id="rig-empty">Nothing on board yet. Add a module to start your build.</p>
+        <div class="gauge">
+          <div class="gauge-track"><div class="gauge-fill" id="gauge-fill"></div></div>
+          <div class="gauge-labels">
+            <span id="gauge-kg">1.7 / 60 kg</span>
+            <span id="gauge-slots">0 / 8 slots</span>
+          </div>
+          <p class="gauge-warn" id="gauge-warn"></p>
+        </div>
+      </div>
+
+      <div class="reveal" id="module-list"></div>
+    </div>
+
+    <div class="build-bar build-bar--sticky">
+      <div class="build-stats">
+        <div><span>weekend total</span><b id="bar-eur">€29</b></div>
+        <div><span>loaded weight</span><b id="bar-kg">1.7 kg</b></div>
+        <div><span>modules</span><b id="bar-mods">0 of 14</b></div>
+      </div>
+      <button class="btn btn--flag" id="bar-reserve">Reserve this build</button>
+    </div>
+  </div>
+</section>
+
+<section class="section section--sheet">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">good to know</p>
+      <h2 class="h2">the fine mechanics</h2>
+    </div>
+    <div class="material-band">
+      <div class="material-card reveal">
+        <h3>One rail, every module</h3>
+        <p>Two anodized rails run the floor of every shell. Modules click in with the same quarter-turn locks — nothing rattles, nothing shifts on gravel.</p>
+      </div>
+      <div class="material-card reveal">
+        <h3>Weight you can trust</h3>
+        <p>The gauge shows real packed weights, measured after assembly. Stay under payload and the trailer tows like it isn't there.</p>
+      </div>
+      <div class="material-card reveal">
+        <h3>Charged on arrival</h3>
+        <p>Power stations leave at 100%, Starlink arrives paired, the projector has a film queued. Thursday is for testing, Friday is yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer-mark">kervan</p>
+    <div class="footer-cols">
+      <div>
+        <h4>what this is</h4>
+        <p data-label-summer="Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday." data-label-winter="Modular aluminum trailers for ski trips and mountain weekends. Built, bolted and delivered in München, collected on Sunday.">Modular aluminum trailers for weekend camp trips. Built, bolted and delivered in München, collected on Sunday.</p>
+      </div>
+      <div>
+        <h4>explore</h4>
+        <ul>
+          <li><a href="builder.html">build a trailer</a></li>
+          <li><a href="routes.html">routes</a></li>
+          <li><a href="fleet.html">the fleet</a></li>
+          <li><a href="index.html#how">how it works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>talk to us</h4>
+        <ul>
+          <li><a href="mailto:hello@kervan.cc">hello@kervan.cc</a></li>
+          <li><a href="tel:+498900000000">+49 89 000 00 00</a></li>
+          <li><a href="#">@kervan.cc</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>small print</h4>
+        <ul>
+          <li><a href="index.html#how">deposit &amp; damage</a></li>
+          <li><a href="#">terms</a></li>
+          <li><a href="#">privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 kervan gmbh · built &amp; bolted in münchen</span>
+      <span>5052 aluminum · stainless rivets · zero plastic shells</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="reserve" id="reserve-dialog">
+  <div class="reserve-inner">
+    <form id="reserve-form" novalidate>
+      <h3>Reserve this build</h3>
+      <p class="reserve-sub">We bolt it Thursday, deliver Friday 08:00–10:00, collect Sunday evening.</p>
+      <div class="manifest" id="reserve-manifest"></div>
+      <div class="field">
+        <span class="field-label">Weekend</span>
+        <div class="weekend-list" id="weekend-list"></div>
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-name">Name</label>
+        <input type="text" id="f-name" autocomplete="name" placeholder="On the delivery label">
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-email">Email</label>
+        <input type="email" id="f-email" autocomplete="email" placeholder="Where the manifest goes">
+      </div>
+      <div class="field">
+        <label class="field-label" for="f-bike">Bike model</label>
+        <input type="text" id="f-bike" autocomplete="off" placeholder="e.g. Cube Reaction, Tern GSD, Dutch city bike">
+      </div>
+      <p class="form-error" id="form-error"></p>
+      <div class="reserve-actions">
+        <button type="button" class="btn btn--ghost" id="reserve-cancel">Keep building</button>
+        <button type="submit" class="btn btn--flag">Reserve this build</button>
+      </div>
+    </form>
+    <div id="reserve-confirm" style="display:none">
+      <h3>Build reserved.</h3>
+      <p class="confirm-ref" id="confirm-ref">KV-0000</p>
+      <div class="confirm-lines">
+        <p>Bolting starts Thursday. Your trailer meets your bike Friday between 08:00 and 10:00.</p>
+        <p>We'll fit the right coupling for your <b id="confirm-bike"></b> — no adapters to puzzle over.</p>
+        <p>The manifest is on its way to <b id="confirm-email"></b>.</p>
+      </div>
+      <div class="reserve-actions">
+        <button type="button" class="btn btn--ink" id="reserve-done">Done</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>
